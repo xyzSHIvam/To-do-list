@@ -2,10 +2,11 @@ const express=require("express")
 const bodyParser=require("body-parser")
 const request=require("request");
 const mongoose=require("mongoose");
+const dotenv=require("dotenv")
 mongoose.set('strictQuery', true);
 
 
-
+dotenv.config();
 
 const app=express();
 
@@ -13,7 +14,7 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
 app.set('view engine','ejs');
 
-mongoose.connect("mongodb+srv://Shivamsarmaroy:Shivam%40123@cluster0.uikcklb.mongodb.net/todolistDB");
+mongoose.connect(process.env.PASS);
 
 const itemSchema=new mongoose.Schema({
     name:String
