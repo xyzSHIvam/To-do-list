@@ -32,6 +32,9 @@ const listSchema=new mongoose.Schema({
     item:[itemSchema]
 });
 
+
+
+
 const List=mongoose.model("List",listSchema);
 
 
@@ -69,6 +72,9 @@ app.get("/",function(req,res){
 
 app.post("/",function(req,res){
 
+
+
+
 const itemName=req.body.newitem;
 const listName=req.body.btnlist;
 const newItem=new Item({
@@ -89,6 +95,9 @@ const newItem=new Item({
 
     
 })
+
+
+
 
 app.post("/delete",function(req,res){
     const checkboxItem=req.body.checkbox;
@@ -135,6 +144,12 @@ app.get("/:id",function(req,res){
   });
  
 })
+
+
+
+
+
+
 
 
 app.get("/about",function(req,res){
